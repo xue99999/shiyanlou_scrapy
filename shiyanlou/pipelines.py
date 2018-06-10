@@ -19,5 +19,5 @@ class ShiyanlouPipeline(object):
 
     def close_spider(self, spider):
 
-        self,session.commit()
+        self.session.commit()
         self.session.close()

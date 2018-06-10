@@ -10,7 +10,7 @@ class Course(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(64), index=True)
-    desc = Column(String(1024))
+    description = Column(String(1024))
     type = Column(String(64), index=True)
     students = Column(Integer)
 
