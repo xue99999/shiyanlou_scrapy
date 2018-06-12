@@ -14,12 +14,6 @@ BOT_NAME = 'shiyanlou'
 SPIDER_MODULES = ['shiyanlou.spiders']
 NEWSPIDER_MODULE = 'shiyanlou.spiders'
 
-IMAGES_STORE = 'images'
-
-IMAGES_THUMBS = {
-    'small': (50, 50)
-}
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'shiyanlou (+http://www.yourdomain.com)'
 # Obey robots.txt rules ROBOTSTXT_OBEY = True
@@ -67,9 +61,17 @@ IMAGES_THUMBS = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = { #    'shiyanlou.pipelines.ShiyanlouPipeline': 300,
-#    'scrapy.pipelines.images.ImagesPipeline': 100
-#}
+ITEM_PIPELINES = {   
+    'shiyanlou.pipelines.ShiyanlouPipeline': 300,
+    'scrapy.pipelines.images.ImagesPipeline': 100
+}
+# 图片存储的位置
+IMAGES_STORE = 'images'
+
+# 图片处理过的位置
+IMAGES_THUMBS = {
+    'small': (50, 50)
+}
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
